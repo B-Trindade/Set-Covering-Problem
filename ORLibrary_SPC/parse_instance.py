@@ -6,7 +6,7 @@ def parse_instance(instance_name: str):
     """
     Lê o arquivo e interpreta a instância construindo o problema selecionado.
     """
-    file_path = f'./{instance_name}.txt'
+    file_path = f'/Instancias/{instance_name}.txt'
 
     with open(file_path, 'r') as file:
         # Passa os valores lidos para uma lista de inteiros

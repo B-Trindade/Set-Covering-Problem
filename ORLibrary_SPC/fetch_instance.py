@@ -1,4 +1,5 @@
 import requests
+from pathlib import Path
 
 def get_data(instance_url: str):
     """
@@ -12,8 +13,11 @@ def get_data(instance_url: str):
     response = requests.get(instance_url)
     
     if response.status_code == 200:
-        # Escreve o conteúdo recebido em um .txt local usando o nome da instancia 
-        with open(instance_name, 'w') as file:
+        # Cria diretório para instâncias caso não exista
+        Path("/Instancias").mkdir(parents=True, exist_ok=True)
+
+        # Escreve o conteúdo recebido em um .txt local usando o nome da instancia
+        with open(f'/Instancias/{instance_name}', 'w') as file:
             file.write(response.text)
         print(f"Data saved to {instance_name}")
     else:

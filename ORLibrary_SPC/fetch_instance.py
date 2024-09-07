@@ -14,17 +14,17 @@ def get_data(instance_url: str):
     
     if response.status_code == 200:
         # Cria diretório para instâncias caso não exista
-        Path("/Instancias").mkdir(parents=True, exist_ok=True)
+        Path("Instancias").mkdir(parents=True, exist_ok=True)
 
         # Escreve o conteúdo recebido em um .txt local usando o nome da instancia
-        with open(f'/Instancias/{instance_name}', 'w') as file:
+        with open(f'Instancias/{instance_name}', 'w') as file:
             file.write(response.text)
         print(f"Data saved to {instance_name}")
     else:
         print(f"Failed to fetch data from {instance_url}. Status code: {response.status_code}")
 
 if __name__ == "__main__":
-    print("Unit test for fetching instance data: scp41.txt was used.")
+    instance_name = input("Unit test for fetching instance data. Input the instance code:")
     
-    url = "http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scp41.txt"
+    url = f"http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/scp{instance_name}.txt"
     get_data(instance_url=url)

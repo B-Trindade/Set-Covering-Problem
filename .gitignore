@@ -1,6 +1,8 @@
-# SCP Instance folder
-Instancias/
+# Output de escrita do CPLEX
+*.lp
 
+# Diretorio com instancias
+/Instancias
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

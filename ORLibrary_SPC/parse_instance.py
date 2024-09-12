@@ -9,7 +9,7 @@ def parse_instance(instance_name: str):
     """
 
     try:
-        file_path = f'/Instancias/{instance_name}.txt'
+        file_path = f'Instancias/{instance_name}.txt'
 
         with open(file_path, 'r') as file:
             # Passa os valores lidos para uma lista de inteiros

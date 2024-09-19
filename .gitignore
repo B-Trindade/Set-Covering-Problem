@@ -1,6 +1,9 @@
 # Output de escrita do CPLEX
 *.lp
 
+# .rar
+*.rar
+
 # Diretorio com instancias
 /Instancias
 
